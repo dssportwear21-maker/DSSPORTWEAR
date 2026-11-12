@@ -41,14 +41,14 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 body.entered .landing{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.07)}
 .landing-inner{position:relative;z-index:2;max-width:840px;animation:rise .8s ease both}
 @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-.landing-emblem{width:78px;height:78px;border-radius:20px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);box-shadow:0 10px 40px rgba(0,0,0,.45);backdrop-filter:blur(8px)}
+.landing-emblem{width:78px;height:78px;border-radius:20px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:36px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);box-shadow:0 10px 28px rgba(15,23,42,.28);overflow:hidden}
 .landing-emblem img{width:100%;height:100%;object-fit:cover;border-radius:20px}
 .landing-brand{font-size:.9rem;letter-spacing:7px;font-weight:700;color:#c7d2fe;text-transform:uppercase;margin-bottom:16px}
 .landing-title{font-size:clamp(2.7rem,9vw,6rem);line-height:.94;font-weight:900;letter-spacing:-1px;text-transform:uppercase;
   background:linear-gradient(180deg,#ffffff 30%,#a5b4fc 74%,#6366f1 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .landing-rule{width:130px;height:4px;border-radius:99px;margin:24px auto;background:linear-gradient(90deg,#818cf8,#ec4899)}
 .landing-sub{font-size:clamp(.95rem,2.4vw,1.15rem);color:var(--muted);max-width:580px;margin:0 auto 36px;line-height:1.65}
-.landing-btn{font:inherit;font-size:1.05rem;font-weight:700;cursor:pointer;color:#fff;border:none;border-radius:14px;padding:16px 36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);box-shadow:0 12px 40px rgba(99,102,241,.45);transition:transform .18s ease,box-shadow .18s ease}
+.landing-btn{font:inherit;font-size:1.05rem;font-weight:700;cursor:pointer;color:#fff;border:none;border-radius:14px;padding:16px 36px;background:linear-gradient(135deg,#6366f1,#8b5cf6);box-shadow:0 18px 52px rgba(99,102,241,.4);transition:transform .18s ease,box-shadow .2s ease}
 .landing-btn:hover{transform:translateY(-3px);box-shadow:0 18px 52px rgba(99,102,241,.6)}
 .landing-foot{position:absolute;bottom:22px;left:0;right:0;font-size:.75rem;letter-spacing:3px;color:rgba(248,250,252,.5);text-transform:uppercase}
 @media (max-width:520px){.landing-brand{letter-spacing:4px}.landing-foot{letter-spacing:2px}}
@@ -64,9 +64,9 @@ body.entered .landing{opacity:0;visibility:hidden;pointer-events:none;transform:
 body.entered .app{opacity:1;transform:none}
 .app-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 24px}
 .brand{display:flex;align-items:center;gap:14px}
-.logo{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(129,140,248,.28);border:1px solid rgba(129,140,248,.45);overflow:hidden;position:relative;flex-shrink:0}
+.logo{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;background:rgba(129,140,248,.28);border:1px solid rgba(129,140,248,.45);overflow:hidden;position:relative}
 .logo img{width:100%;height:100%;object-fit:cover}
-.logo-edit{position:absolute;right:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:#6366f1;color:#fff;border:2px solid rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer;padding:0;line-height:1;transition:transform .15s ease}
+.logo-edit{position:absolute;right:-6px;bottom:-6px;width:22px;height:22px;border-radius:50%;background:#6366f1;color:#fff;border:2px solid rgba(255,255,255,.65);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .15s ease}
 .logo-edit:hover{transform:scale(1.15)}
 .app-header h1{font-size:1.35rem;font-weight:700;letter-spacing:.3px}
 .app-header p{font-size:.85rem;color:var(--muted);margin-top:2px}
@@ -99,6 +99,7 @@ body.entered .app{opacity:1;transform:none}
 .badge-type{background:rgba(129,140,248,.18);color:#c7d2fe;border-color:rgba(129,140,248,.4)}
 .badge-dp{background:rgba(251,191,36,.16);color:#fde68a;border-color:rgba(251,191,36,.4)}
 .badge-lunas{background:rgba(52,211,153,.16);color:#a7f3d0;border-color:rgba(52,211,153,.4)}
+.badge-transfer{background:rgba(56,189,248,.16);color:#bae6fd;border-color:rgba(56,189,248,.42)}
 .badge-ready{background:rgba(52,211,153,.16);color:#a7f3d0;border-color:rgba(52,211,153,.45)}
 .badge-overdue{background:rgba(248,113,113,.16);color:#fecaca;border-color:rgba(248,113,113,.4)}
 
@@ -121,7 +122,7 @@ body.entered .app{opacity:1;transform:none}
 .stages-label{display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:var(--muted)}
 .stepper{display:flex;align-items:flex-start;gap:0;overflow-x:auto;padding:6px 2px 2px}
 .step{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:74px;position:relative;flex:1}
-.step .dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);transition:all .3s ease;z-index:1}
+.step .dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);transition:all .2s ease;z-index:1}
 .step .name{font-size:.68rem;text-align:center;color:var(--muted);line-height:1.2;max-width:76px}
 .step::after{content:"";position:absolute;top:16px;left:50%;width:100%;height:2px;background:rgba(255,255,255,.15);z-index:0}
 .step:last-child::after{display:none}
@@ -147,7 +148,7 @@ body.entered .app{opacity:1;transform:none}
 .empty .big{font-size:3rem;margin-bottom:12px}
 
 /* ===== Modal ===== */
-.modal-overlay{position:fixed;inset:0;background:rgba(15,10,40,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;z-index:100;overflow-y:auto}
+.modal-overlay{position:fixed;inset:0;background:rgba(15,10,40,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;padding:40px 16px;z-index:300}
 .modal-overlay.open{display:flex}
 .modal{width:100%;max-width:560px;padding:26px 28px;background:rgba(49,46,129,.55);border:1px solid rgba(255,255,255,.25);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.4);margin:auto}
 .modal h2{font-size:1.3rem;margin-bottom:4px}
@@ -327,14 +328,42 @@ const COMPANY = {
 /* ===== Utility ===== */
 const $ = id => document.getElementById(id);
 const fmtRp = n => "Rp " + Number(n||0).toLocaleString("id-ID");
-const esc = s => String(s??"").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+const esc = s => String(s??"").replace(/[&<>\"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
 const payStatus = o => o.payment || "DP";
-const payBadgeClass = o => payStatus(o) === "DP" ? "badge-dp" : "badge-lunas";
-const isOverdue = o => o.deadline && o.stage < STAGES.length-1 && new Date(o.deadline) < new Date(new Date().toDateString());
+const isPaidStatus = status => ["Lunas", "Tunai"].includes(status);
+const payBadgeClass = o => {
+  const status = payStatus(o);
+  if (status === "DP") return "badge-dp";
+  if (status === "Transfer") return "badge-transfer";
+  if (status === "Lunas" || status === "Tunai") return "badge-lunas";
+  return "badge-dp";
+};
+const parseLocalDate = value => {
+  if (!value) return null;
+  const match = String(value).match(/^\d{4}-\d{2}-\d{2}$/);
+  if (!match) return null;
+  const [year, month, day] = value.split('-').map(Number);
+  if ([year, month, day].some(Number.isNaN)) return null;
+  return new Date(year, month - 1, day);
+};
+const isOverdue = o => {
+  if (!o.deadline || o.stage >= STAGES.length - 1) return false;
+  const deadline = parseLocalDate(o.deadline);
+  if (!deadline) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return deadline < today;
+};
+
 /* ===== Inisialisasi ===== */
 function init(){
-  const saved = localStorage.getItem("apc_orders");
-  orders = saved ? JSON.parse(saved) : seedData.slice();
+  try {
+    const saved = localStorage.getItem("apc_orders");
+    orders = saved ? JSON.parse(saved) : seedData.slice();
+  } catch (e) {
+    orders = seedData.slice();
+    console.warn("Gagal memuat data lokal:", e);
+  }
   persist();
   buildStageSelects();
   bindToolbar();
@@ -342,7 +371,10 @@ function init(){
   render();
   if(localStorage.getItem("apc_entered") === "1"){ document.body.classList.add("entered"); }
 }
-function persist(){ localStorage.setItem("apc_orders", JSON.stringify(orders)); }
+function persist(){
+  try { localStorage.setItem("apc_orders", JSON.stringify(orders)); }
+  catch (e) { console.warn("Gagal menyimpan data lokal:", e); }
+}
 
 /* ===== Logo Perusahaan ===== */
 function loadLogo(){
@@ -405,7 +437,7 @@ function printDocument(id, type){
   const total = unitPrice * Number(o.qty||0);
   const docNo = (isFaktur ? "FKT-" : "INV-") + String(o.id).replace(/\D/g,"");
   const today = new Date().toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"});
-  const paid = payStatus(o) === "Lunas" || payStatus(o) === "Tunai";
+  const paid = isPaidStatus(payStatus(o));
   const desc = esc(o.type) + (o.material ? " — " + esc(o.material) : "");
   const logoHTML = logo ? '<img src="'+logo+'" alt="logo">' : '<div class="logo-fallback">🧵</div>';
 
@@ -533,7 +565,7 @@ function getVisible(){
     return matchQ && matchS && matchP;
   });
   switch(filters.sort){
-    case "deadline": list.sort((a,b)=> (a.deadline||"9999").localeCompare(b.deadline||"9999")); break;
+    case "deadline": list.sort((a,b)=> (parseLocalDate(a.deadline) || new Date(9999,0,1)).getTime() - (parseLocalDate(b.deadline) || new Date(9999,0,1)).getTime()); break;
     case "name": list.sort((a,b)=> a.customer.localeCompare(b.customer)); break;
     case "qty": list.sort((a,b)=> b.qty - a.qty); break;
     default: list.sort((a,b)=> (b.created||"").localeCompare(a.created||""));
@@ -553,11 +585,12 @@ function render(){
 }
 
 function renderStats(){
+  const paidCount = orders.filter(o => isPaidStatus(payStatus(o))).length;
   $("statTotal").textContent = orders.length;
   $("statProgress").textContent = orders.filter(o=> o.stage < STAGES.length-1).length;
   $("statReady").textContent = orders.filter(o=> o.stage === STAGES.length-1).length;
   $("statValue").textContent = orders.reduce((s,o)=> s + Number(o.qty||0), 0) + " pcs";
-  $("statPaid").textContent = "Dari " + orders.length + " pesanan";
+  $("statPaid").textContent = paidCount + " / " + orders.length + " lunas";
 }
 
 function stepperHTML(o){
